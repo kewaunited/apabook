@@ -1,0 +1,15 @@
+%div{ class: 'apartments col-lg-9' }
+  - @apartments.each do |apartment|
+    %div{ class: 'apartment panel panel-default' }
+      %div{ class: 'panel-body' }
+        %img{ class: 'media-object col-lg-4', src: 'http://sunseasons24.pl/imgs/apartamenty/0115niebieskiemigdaly9.jpg' }
+        %div{ class: 'col-lg-5' }
+          %p{ class: 'lead' } Apartment <strong>#{apartment.name}</strong>
+          %p Bedrooms: <strong>#{apartment.bedroom_count}</strong>
+          %p Bathrooms: <strong>#{apartment.bathroom_count}</strong>
+          %p Floor: <strong>#{apartment.floor}</strong>
+        %div{ class: 'col-lg-3' }
+          %p
+            %h2{ class: 'pull-right' } 200 PLN
+          %p
+            %a{ href: '#', class: 'btn btn-primary pull-right', role: 'button' } Book now
