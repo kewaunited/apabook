@@ -1,8 +1,14 @@
-%h1 Apartments
+%div{ class: 'page-header' } <h3>Apartments</h3>
 %div{ class: 'apartments'}
   - @apartments.each do |apartment|
-    %div{ class: 'list-item' }
-      %p Apartment #{apartment.name}
-      %p Bedrooms: #{apartment.bedroom_count}
-      %p Bathrooms: #{apartment.bathroom_count}
-      %p Floor: #{apartment.floor}
+    %div{ class: 'col-lg-6' }
+      %div{ class: 'apartment panel panel-default' }
+        %div{ class: 'panel-body'}
+          %img{ class: 'media-object col-lg-5', src: 'http://sunseasons24.pl/imgs/apartamenty/0115niebieskiemigdaly9.jpg' }
+          %div{ class: 'col-lg-7' }
+            %p{ class: 'lead' } Apartment <strong>#{apartment.name}</strong>
+            %p Bedrooms: <strong>#{apartment.bedroom_count}</strong>
+            %p Bathrooms: <strong>#{apartment.bathroom_count}</strong>
+            %p Floor: <strong>#{apartment.floor}</strong>
+            %p
+              %a{ href: '#', class: 'btn btn-primary pull-right', role: 'button' } Book now
