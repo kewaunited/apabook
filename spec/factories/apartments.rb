@@ -6,5 +6,6 @@ FactoryGirl.define do
     bathroom_count 1
     room_description 'One bedroom apartment with a living room. It has an open-plane kitchen, a bathroom with a shower. Free WiFi Internet is available for free to all our guests.'
     floor 1
+    address
   end
 end
