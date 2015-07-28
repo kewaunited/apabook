@@ -2,12 +2,18 @@
   - @apartments.each do |apartment|
     %div{ class: 'apartment panel panel-default' }
       %div{ class: 'panel-body' }
-        %img{ class: 'media-object col-lg-4', src: 'http://sunseasons24.pl/imgs/apartamenty/0115niebieskiemigdaly9.jpg' }
-        %div{ class: 'col-lg-5' }
-          %p{ class: 'lead' } Apartment <strong>#{apartment.name}</strong>
-          %p Bedrooms: <strong>#{apartment.bedroom_count}</strong>
-          %p Bathrooms: <strong>#{apartment.bathroom_count}</strong>
-          %p Floor: <strong>#{apartment.floor}</strong>
+        %img{ class: 'media-object col-lg-3', src: 'http://sunseasons24.pl/imgs/apartamenty/0115niebieskiemigdaly9.jpg' }
+        %div{ class: 'col-lg-6' }
+          %p{ class: 'lead' }
+            Apartment <strong>#{apartment.name}</strong><br />
+            <small>#{apartment.address.street}, #{apartment.address.city}</small>
+          %div{ class: 'row' }
+            %div{ class: 'col-lg-4' }
+              Bedrooms: <strong>#{apartment.bedroom_count}</strong>
+            %div{ class: 'col-lg-4' }
+              Bathrooms: <strong>#{apartment.bathroom_count}</strong>
+            %div{ class: 'col-lg-4' }
+              Guests: <strong>#{apartment.formatted_guests}</strong>
         %div{ class: 'col-lg-3' }
           %p
             %h2{ class: 'pull-right' } 200 PLN
