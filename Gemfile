@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,7 +55,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.3.3'
   gem 'capybara', '~> 2.4.4'
   gem 'guard-rspec', '~> 4.6.3'
-  gem 'growl', '~> 1.0.3'
+  gem 'growl'
   gem 'ruby_gntp'
   gem 'factory_girl_rails', '~> 4.0'
 end
