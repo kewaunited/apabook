@@ -1,0 +1,8 @@
+%h1 Apartments
+%div{ class: 'apartments'}
+  - @apartments.each do |apartment|
+    %div{ class: 'list-item' }
+      %p Apartment #{apartment.name}
+      %p Bedrooms: #{apartment.bedroom_count}
+      %p Bathrooms: #{apartment.bathroom_count}
+      %p Floor: #{apartment.floor}

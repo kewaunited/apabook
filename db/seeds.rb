@@ -3,5 +3,4 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+apartments = Apartment.create([{ name: 'Chocolate', door_number: '10', bedroom_count: 1, bathroom_count: 1, floor: 2 }, { name: 'Comfortable', door_number: '15', bedroom_count: 2, bathroom_count: 1, floor: 3 }])
