@@ -6,6 +6,6 @@
     = javascript_include_tag :application, data: {turbolinks_track: true}
     = csrf_meta_tags
   %body
+    = render 'header'
     %div{ class: 'container' }
-      = render 'header'
       = yield

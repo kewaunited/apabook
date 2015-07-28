@@ -1,15 +1,4 @@
 %div{ class: 'page-header' } <h3>Apartments</h3>
-%div{ class: 'apartments'}
-  - @apartments.each do |apartment|
-    %div{ class: 'col-lg-9' }
-      %div{ class: 'apartment panel panel-default' }
-        %div{ class: 'panel-body'}
-          %img{ class: 'media-object col-lg-4', src: 'http://sunseasons24.pl/imgs/apartamenty/0115niebieskiemigdaly9.jpg' }
-          %div{ class: 'col-lg-6' }
-            %p{ class: 'lead' } Apartment <strong>#{apartment.name}</strong>
-            %p Bedrooms: <strong>#{apartment.bedroom_count}</strong>
-            %p Bathrooms: <strong>#{apartment.bathroom_count}</strong>
-            %p Floor: <strong>#{apartment.floor}</strong>
-          %div{ class: 'col-lg-2' }
-            %p
-              %a{ href: '#', class: 'btn btn-primary pull-right', role: 'button' } Book now
+%div{ class: 'row' }
+  = render 'apartments_search'
+  = render 'apartments_list'
