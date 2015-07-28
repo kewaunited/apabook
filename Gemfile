@@ -64,3 +64,5 @@ group :development do
   gem 'guard-bundler', require: false
 end
 
+gem 'rails_12factor', group: :production
+
