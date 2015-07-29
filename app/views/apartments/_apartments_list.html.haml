@@ -16,6 +16,7 @@
               Guests: <strong>#{apartment.formatted_guests}</strong>
         %div{ class: 'col-lg-3' }
           %p
-            %h2{ class: 'pull-right' } 200 PLN
-          %p
-            %a{ href: '#', class: 'btn btn-primary pull-right', role: 'button' } Book now
+            %small price per night
+            %h2
+              #{apartment.day_price} PLN
+            %a{ href: '#', class: 'btn btn-primary', role: 'button' } Book now

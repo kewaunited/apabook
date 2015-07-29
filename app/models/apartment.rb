@@ -5,10 +5,6 @@ class Apartment < ActiveRecord::Base
   accepts_nested_attributes_for :address
 
   def formatted_guests
-    if max_guests != min_guests
-      [min_guests, max_guests - min_guests].join(' + ')
-    else
-      max_guests
-    end
+    max_guests != min_guests ? [min_guests, max_guests - min_guests].join(' + ') : max_guests
   end
 end
