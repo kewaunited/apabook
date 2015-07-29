@@ -8,6 +8,8 @@ FactoryGirl.define do
     floor 1
     min_guests 2
     max_guests 4
+    day_price 120.00
+    week_price 600.00
     address
   end
 end

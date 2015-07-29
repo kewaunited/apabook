@@ -9,8 +9,8 @@ address2 = Address.create!(city: 'Berlin', street: 'Polen Strasse 2123', zip_cod
 
 address3 = Address.create!(city: 'London', street: 'George Street 45B', zip_code: 'LO 1234')
 
-apartment1 = Apartment.create!(name: 'Flower', door_number: '22', bedroom_count: 1, bathroom_count: 1, floor: 4, min_guests: 2, max_guests: 4, address: address1)
+apartment1 = Apartment.create!(name: 'Flower', door_number: '22', bedroom_count: 1, bathroom_count: 1, floor: 4, min_guests: 2, max_guests: 4, day_price: 120.00, week_price: 600.00, address: address1)
 
-apartment2 = Apartment.create!(name: 'Comfortable', door_number: '15', bedroom_count: 2, bathroom_count: 1, floor: 3, min_guests: 4, max_guests: 6, address: address2)
+apartment2 = Apartment.create!(name: 'Comfortable', door_number: '15', bedroom_count: 2, bathroom_count: 1, floor: 3, min_guests: 4, max_guests: 6, day_price: 200.00, address: address2)
 
-apartment3 = Apartment.create!(name: 'Chocolate', door_number: '10', bedroom_count: 1, bathroom_count: 1, floor: 2, min_guests: 4, max_guests: 4, address: address3)
+apartment3 = Apartment.create!(name: 'Chocolate', door_number: '10', bedroom_count: 1, bathroom_count: 1, floor: 2, min_guests: 4, max_guests: 4, day_price: 130.00, address: address3)

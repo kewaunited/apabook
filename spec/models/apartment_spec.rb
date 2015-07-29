@@ -36,4 +36,12 @@ RSpec.describe Apartment, type: :model do
   it 'formats guests correctyl' do
     expect FactoryGirl.create(:apartment).formatted_guests == '2 + 2'
   end
+
+  it 'is invalid without a day price' do
+    expect(FactoryGirl.build(:apartment, day_price: nil)).to_not be_valid
+  end
+
+  it 'is valid without a week price' do
+    expect(FactoryGirl.build(:apartment, week_price: nil)).to be_valid
+  end
 end
