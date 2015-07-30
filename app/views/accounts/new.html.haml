@@ -1,27 +1,34 @@
-%h3 Register
-= render partial: 'application/errors', locals: { object: @account }
+%div{ class: 'row' }
+  %div{ class: 'col-lg-5' }
+    = render partial: 'application/errors', locals: { object: @account }
+%div{ class: 'row' }
+  %div{ class: 'well bs-component col-lg-5' }
+    = form_for @account, html: {class: 'account-form form-horizontal'} do |f|
+      %fieldset
+        %legend Register
+        %div{ class: 'form-group' }
+          = f.label :email, 'E-mail:', class: 'control-label col-lg-3'
+          %div{ class: 'col-lg-9' }
+            = f.email_field :email, class: 'form-control'
+        %div{ class: 'form-group' }
+          = f.label :first_name, 'First name:', class: 'control-label col-lg-3'
+          %div{ class: 'col-lg-9' }
+            = f.text_field :first_name, class: 'form-control'
+        %div{ class: 'form-group' }
+          = f.label :last_name, 'Last name:', class: 'control-label col-lg-3'
+          %div{ class: 'col-lg-9' }
+            = f.text_field :last_name, class: 'form-control'
+        %div{ class: 'form-group' }
+          = f.label :password, 'Password:', class: 'control-label col-lg-3'
+          %div{ class: 'col-lg-9' }
+            = f.password_field :password, class: 'form-control'
 
-= form_for @account, html: {class: 'account-form'} do |f|
+        %div{ class: 'form-group' }
+          = f.label :password_confirmation, 'Confirm password:', class: 'control-label col-lg-3'
+          %div{ class: 'col-lg-9' }
+            = f.password_field :password_confirmation, class: 'form-control'
 
-  %p
-    = f.label :email, 'E-mail:'
-    = f.email_field :email
-
-  %p
-    = f.label :first_name, 'First name:'
-    = f.text_field :first_name
-  %p
-    = f.label :last_name, 'Last name:'
-    = f.text_field :last_name
-
-  %p
-    = f.label :password, 'Password:'
-    = f.password_field :password
-
-  %p
-    = f.label :password_confirmation, 'Confirm assword:'
-    = f.password_field :password_confirmation
-
-  %p
-    = f.submit 'Register'
+        %div{ class: 'form-group' }
+          %div{ class: 'col-lg-9 col-lg-offset-3'}
+            = f.button 'Register', class: 'btn btn-primary'
 
