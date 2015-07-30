@@ -1,10 +1,10 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.all
+    @apartments = Apartment.active
   end
 
   def show
-    @apartment = Apartment.find(:id)
+    @apartment = Apartment.active.find(:id)
   end
 
   def new

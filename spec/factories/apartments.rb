@@ -12,5 +12,9 @@ FactoryGirl.define do
     week_price 600.00
     active true
     address
+
+    factory :apartment_inactive do
+      active false
+    end
   end
 end

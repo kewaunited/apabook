@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe Apartment do
   it 'has a valid factory' do
-    expect(FactoryGirl.create(:apartment)).to be_valid
+    expect(create_valid_apartment).to be_valid
   end
 
-  describe "ActiveModel validations" do
+  describe 'ActiveModel validations' do
     it 'is invalid without a name' do
       expect(FactoryGirl.build(:apartment, name: nil)).to_not be_valid
     end
@@ -43,9 +43,19 @@ describe Apartment do
     end
   end
 
-  describe Apartment, '.formatted_guests' do
+  describe '.formatted_guests' do
     it 'formats guests correctly' do
-      expect(FactoryGirl.create(:apartment).formatted_guests).to eq('2 + 2')
+      expect(create_valid_apartment.formatted_guests).to eq('2 + 2')
     end
+  end
+
+  describe 'active' do
+    it 'includes active apartments' do
+      expect(Apartment.active).to include(create_valid_apartment)
+    end
+  end
+
+  def create_valid_apartment
+    FactoryGirl.create(:apartment)
   end
 end

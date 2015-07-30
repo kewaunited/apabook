@@ -1,5 +1,6 @@
 class Apartment < ActiveRecord::Base
   validates :name, :door_number, :bedroom_count, :bathroom_count, :floor, :min_guests, :max_guests, :day_price, :active, presence: true
+  scope :active, -> { where(active: true) }
 
   belongs_to :address
   belongs_to :owner, class_name: 'Account'
