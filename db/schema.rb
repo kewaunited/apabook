@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729195554) do
+ActiveRecord::Schema.define(version: 20150730133933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.string   "city"
@@ -38,8 +47,11 @@ ActiveRecord::Schema.define(version: 20150729195554) do
     t.integer  "max_guests"
     t.decimal  "day_price"
     t.decimal  "week_price"
+    t.boolean  "active"
+    t.integer  "owner_id"
   end
 
   add_index "apartments", ["address_id"], name: "index_apartments_on_address_id", using: :btree
+  add_index "apartments", ["owner_id"], name: "index_apartments_on_owner_id", using: :btree
 
 end

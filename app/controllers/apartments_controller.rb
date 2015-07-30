@@ -6,4 +6,10 @@ class ApartmentsController < ApplicationController
   def show
     @apartment = Apartment.find(:id)
   end
+
+  def new
+  end
+
+  def create
+  end
 end

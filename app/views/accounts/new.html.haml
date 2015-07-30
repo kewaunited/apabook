@@ -1,0 +1,27 @@
+%h1 Sign up
+= render partial: 'application/errors', locals: { object: @account }
+
+= form_for @account, html: {class: 'account-form'} do |f|
+
+  %p
+    = f.label :email, 'E-mail:'
+    = f.email_field :email
+
+  %p
+    = f.label :first_name, 'First name:'
+    = f.text_field :first_name
+  %p
+    = f.label :last_name, 'Last name:'
+    = f.text_field :last_name
+
+  %p
+    = f.label :password, 'Password:'
+    = f.password_field :password
+
+  %p
+    = f.label :password_confirmation, 'Confirm assword:'
+    = f.password_field :password_confirmation
+
+  %p
+    = f.submit 'Register'
+

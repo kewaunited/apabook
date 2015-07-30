@@ -8,4 +8,6 @@
   %body
     = render 'header'
     %div{ class: 'container' }
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: flash_class(name)
       = yield

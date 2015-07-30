@@ -1,0 +1,6 @@
+- if object.errors.any?
+  %div{ class: 'errors-container', style: 'background: red; color: white; display: inline-block; padding: 10px; margin-bottom: 30px;' }
+    %p{ class: 'errors' } Something went wrong!
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li{ class: 'error' } = msg
