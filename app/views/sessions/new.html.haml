@@ -1,15 +1,15 @@
-%div{ class: 'well bs-component col-lg-5' }
+.well.bs-component.col-lg-5
   = form_tag session_path, class: 'form-horizontal' do
     %fieldset
       %legend Login
-      %div{ class: 'form-group' }
+      .form-group
         = label_tag :email, 'E-mail:', class: 'control-label col-lg-2'
-        %div{ class: 'col-lg-10' }
+        .col-lg-10
           = email_field_tag :email, nil, class: 'form-control'
-      %div{ class: 'form-group' }
+      .form-group
         = label_tag :password, 'Password:', class: 'control-label col-lg-2'
-        %div{ class: 'col-lg-10' }
+        .col-lg-10
           = password_field_tag :password, nil, class: 'form-control'
-      %div{ class: 'form-group' }
-        %div{ class: 'col-lg-10 col-lg-offset-2'}
+      .form-group
+        .col-lg-10.col-lg-offset-2
           = button_tag 'Login', class: 'btn btn-primary'

@@ -1,34 +1,34 @@
-%div{ class: 'row' }
-  %div{ class: 'col-lg-5' }
+.row
+  .col-lg-5
     = render partial: 'application/errors', locals: { object: @account }
-%div{ class: 'row' }
-  %div{ class: 'well bs-component col-lg-5' }
-    = form_for @account, html: {class: 'account-form form-horizontal'} do |f|
+.row
+  .well.bs-component.col-lg-5
+    = form_for @account, html: { class: 'account-form form-horizontal' } do |f|
       %fieldset
         %legend Register
-        %div{ class: 'form-group' }
+        .form-group
           = f.label :email, 'E-mail:', class: 'control-label col-lg-3'
-          %div{ class: 'col-lg-9' }
+          .col-lg-9
             = f.email_field :email, class: 'form-control'
-        %div{ class: 'form-group' }
+        .form-group
           = f.label :first_name, 'First name:', class: 'control-label col-lg-3'
-          %div{ class: 'col-lg-9' }
+          .col-lg-9
             = f.text_field :first_name, class: 'form-control'
-        %div{ class: 'form-group' }
+        .form-group
           = f.label :last_name, 'Last name:', class: 'control-label col-lg-3'
-          %div{ class: 'col-lg-9' }
+          .col-lg-9
             = f.text_field :last_name, class: 'form-control'
-        %div{ class: 'form-group' }
+        .form-group
           = f.label :password, 'Password:', class: 'control-label col-lg-3'
-          %div{ class: 'col-lg-9' }
+          .col-lg-9
             = f.password_field :password, class: 'form-control'
 
-        %div{ class: 'form-group' }
+        .form-group
           = f.label :password_confirmation, 'Confirm password:', class: 'control-label col-lg-3'
-          %div{ class: 'col-lg-9' }
+          .col-lg-9
             = f.password_field :password_confirmation, class: 'form-control'
 
-        %div{ class: 'form-group' }
-          %div{ class: 'col-lg-9 col-lg-offset-3'}
+        .form-group
+          .col-lg-9.col-lg-offset-3
             = f.button 'Register', class: 'btn btn-primary'
 
