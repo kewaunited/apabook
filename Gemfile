@@ -32,10 +32,9 @@ gem 'rubocop'
 
 gem 'devise', '~> 3.5.1'
 
-gem 'haml'
+gem 'haml', '~> 4.0.6'
 
-gem 'haml-rails'
-
+gem 'haml-rails', '~> 0.9.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
