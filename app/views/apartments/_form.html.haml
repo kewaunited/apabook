@@ -27,14 +27,14 @@
               = f.text_field :door_number, class: 'form-control'
             = f.label :floor, 'Floor:', class: 'control-label col-lg-3'
             .col-lg-2
-              = f.select :floor, options_for_select((0..20).step(1)), {}, { class: 'form-control' }
+              = f.select :floor, options_for_select((0..20).step(1)), {}, class: 'form-control'
           .form-group
             = f.label :bedroom_count, 'Bedroom count:', class: 'control-label col-lg-3'
             .col-lg-2
-              = f.select :bedroom_count, options_for_select((0..5).step(1)), {}, { class: 'form-control' }
+              = f.select :bedroom_count, options_for_select((0..5).step(1)), {}, class: 'form-control'
             = f.label :bathroom_count, 'Bathroom count:', class: 'control-label col-lg-3'
             .col-lg-2
-              = f.select :bathroom_count, options_for_select((0..5).step(1)), {}, { class: 'form-control' }
+              = f.select :bathroom_count, options_for_select((0..5).step(1)), {}, class: 'form-control'
       .well.bs-component
         %fieldset
           %h5 Address
