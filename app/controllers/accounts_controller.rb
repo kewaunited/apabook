@@ -5,11 +5,7 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
-    if @account.save
-      sign_in(@account)
-    else
-      render :new
-    end
+    @account.save ? sign_in(@account) : render(:new)
   end
 
   private

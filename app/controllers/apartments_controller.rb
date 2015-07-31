@@ -25,16 +25,12 @@ class ApartmentsController < ApplicationController
   end
 
   def edit
-    @apartment = users_apartment
+    @apartment = user_apartment
     apartment.build_address if apartment && apartment.address.nil?
   end
 
   def update
-    if users_apartment.update(apartment_params)
-      redirect_to edit_apartment_path
-    else
-      render :edit
-    end
+    user_apartment.update(apartment_params) ? redirect_to(edit_apartment_path) : render(:edit)
   end
 
   def destroy
@@ -48,12 +44,12 @@ class ApartmentsController < ApplicationController
     @apartment ||= Apartment.find(params[:id])
   end
 
-  def users_apartment
+  def user_apartment
     current_user.apartments.find(params[:id])
   end
 
   def apartment_not_found
-    redirect_to apartments_path, notice: "You do not own an apartment with this id."
+    redirect_to apartments_path, notice: 'You do not own an apartment with this id.'
   end
 
   def apartment_params
