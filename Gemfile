@@ -68,7 +68,7 @@ group :development do
 end
 
 group :production do
-  gem 'rails_12factor', group: :production
+  gem 'rails_12factor'
   gem 'rack-cache', require: 'rack/cache'
 end
 
