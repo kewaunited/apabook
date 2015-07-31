@@ -2,18 +2,19 @@
   - @apartments.each do |apartment|
     .apartment.panel.panel-default
       .panel-body
-        %img.media-object.col-lg-3{ src: 'http://imageshack.com/a/img913/4462/NY1rib.jpg' }
-        .col-lg-6
-          %p.lead
-            Apartment <strong>#{apartment.name}</strong><br />
-            <small>#{apartment.address.street}, #{apartment.address.city}</small>
-          .row
-            .col-lg-4
-              Bedrooms: <strong>#{apartment.bedroom_count}</strong>
-            .col-lg-4
-              Bathrooms: <strong>#{apartment.bathroom_count}</strong>
-            .col-lg-4
-              Guests: <strong>#{apartment.formatted_guests}</strong>
-        .col-lg-3
-          %h2 #{apartment.day_price} PLN
-          %a.btn.btn-primary{ href: '#', role: 'button' } Book now
+        .row
+          %img.media-object.col-lg-3{ src: 'http://imageshack.com/a/img913/4462/NY1rib.jpg' }
+          .col-lg-6
+            %p.lead
+              Apartment <strong>#{apartment.name}</strong><br />
+              <small>#{apartment.address.street}, #{apartment.address.city}</small>
+            .row
+              .col-lg-4
+                Bedrooms: <strong>#{apartment.bedroom_count}</strong>
+              .col-lg-4
+                Bathrooms: <strong>#{apartment.bathroom_count}</strong>
+              .col-lg-4
+                Guests: <strong>#{apartment.formatted_guests}</strong>
+          .col-lg-3.text-right
+            %h2 #{apartment.day_price} PLN
+            %a.btn.btn-primary{ href: '#', role: 'button' } Book now

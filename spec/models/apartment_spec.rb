@@ -41,6 +41,10 @@ describe Apartment do
     it 'is valid without a week price' do
       expect(FactoryGirl.build(:apartment, week_price: nil)).to be_valid
     end
+
+    it 'is invalid without a min stay' do
+      expect(FactoryGirl.build(:apartment, min_stay: nil)).to_not be_valid
+    end
   end
 
   describe '.formatted_guests' do

@@ -1,0 +1,16 @@
+.apartments.col-lg-12
+  .row
+    - @apartments.each do |apartment|
+      .col-lg-6
+        .apartment.panel.panel-default
+          .panel-body
+            .row
+              %img.media-object.col-lg-5{ src: 'http://imageshack.com/a/img913/4462/NY1rib.jpg' }
+              .col-lg-7
+                %p.lead
+                  Apartment <strong>#{apartment.name}</strong><br />
+                  <small>#{apartment.address.street}, #{apartment.address.city}</small>
+                .row
+                  .col-lg-12
+                    = link_to 'Edit', edit_apartment_path(apartment), { class: 'btn btn-primary', role: 'button' }
+                    = link_to 'Delete', apartment, method: 'delete', confirm: "Are you sure?", class: 'btn btn-danger', role: 'button'

@@ -1,0 +1,82 @@
+.row
+  .col-lg-5
+    = render partial: 'application/errors', locals: { object: @apartment }
+= form_for @apartment, html: { class: 'apartment-form form-horizontal' } do |f|
+  .row
+    .col-lg-6
+      .well.bs-component
+        %fieldset
+          %h5 Basic Information
+          %hr
+          .form-group
+            .checkbox.col-lg-9
+              = f.label :active do
+                = f.check_box :active
+                Active
+          .form-group
+            = f.label :name, 'Name:', class: 'control-label col-lg-3'
+            .col-lg-9
+              = f.text_field :name, class: 'form-control'
+          .form-group
+            = f.label :desciption, 'Description:', class: 'control-label col-lg-3'
+            .col-lg-9
+              = f.text_area :room_description, class: 'form-control'
+          .form-group
+            = f.label :door_number, 'Door number:', class: 'control-label col-lg-3'
+            .col-lg-2
+              = f.text_field :door_number, class: 'form-control'
+            = f.label :floor, 'Floor:', class: 'control-label col-lg-3'
+            .col-lg-2
+              = f.select :floor, options_for_select((0..20).step(1)), {}, { class: 'form-control' }
+          .form-group
+            = f.label :bedroom_count, 'Bedroom count:', class: 'control-label col-lg-3'
+            .col-lg-2
+              = f.select :bedroom_count, options_for_select((0..5).step(1)), {}, { class: 'form-control' }
+            = f.label :bathroom_count, 'Bathroom count:', class: 'control-label col-lg-3'
+            .col-lg-2
+              = f.select :bathroom_count, options_for_select((0..5).step(1)), {}, { class: 'form-control' }
+      .well.bs-component
+        %fieldset
+          %h5 Address
+          %hr
+          = f.fields_for :address do |a|
+            .form-group
+              = a.label :street, 'Street:', class: 'control-label col-lg-3'
+              .col-lg-9
+                = a.text_field :street, class: 'form-control'
+            .form-group
+              = a.label :city, 'City:', class: 'control-label col-lg-3'
+              .col-lg-9
+                = a.text_field :city, class: 'form-control'
+            .form-group
+              = a.label :zip_code, 'Zip code:', class: 'control-label col-lg-3'
+              .col-lg-9
+                = a.text_field :zip_code, class: 'form-control'
+    .col-lg-6
+      .well.bs-component
+        %fieldset
+          %h5 Booking settings
+          %hr
+          .form-group
+            = f.label :min_guests, 'Minimum guests from:', class: 'control-label col-lg-4'
+            .col-lg-3
+              = f.number_field :min_guests, min: 0, step: 1, class: 'form-control'
+            = f.label :max_guests, 'to:', class: 'control-label col-lg-2'
+            .col-lg-3
+              = f.number_field :max_guests, min: 0, step: 1, class: 'form-control'
+          .form-group
+            = f.label :day_price, 'Day price:', class: 'control-label col-lg-4'
+            .col-lg-3
+              = f.number_field :day_price, min: 0, step: 0.01, class: 'form-control'
+            = f.label :week_price, 'Week price:', class: 'control-label col-lg-2'
+            .col-lg-3
+              = f.number_field :week_price, min: 0, step: 0.01, class: 'form-control'
+          .form-group
+            = f.label :min_stay, 'Minimum stay (days):', class: 'control-label col-lg-4'
+            .col-lg-3
+              = f.number_field :min_stay, min: 0, step: 1, class: 'form-control'
+    .col-lg-6
+      .well.bs-component
+        %fieldset
+          = f.button 'Save', class: 'btn btn-primary'
+          = f.button 'Delete', class: 'btn btn-danger'

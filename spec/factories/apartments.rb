@@ -10,6 +10,7 @@ FactoryGirl.define do
     max_guests 4
     day_price 120.00
     week_price 600.00
+    min_stay 2
     active true
     address
 

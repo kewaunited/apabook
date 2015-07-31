@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :user_signed_in?
 
   private
 
@@ -13,6 +14,12 @@ class ApplicationController < ActionController::Base
 
   def user_signed_in?
     !current_user.nil?
+  end
+
+  def authorize_user
+    return unless current_user.nil?
+    session[:return_to] = request.url
+    redirect_to login_path, notice: 'Please login!'
   end
 
   def sign_in(account)
