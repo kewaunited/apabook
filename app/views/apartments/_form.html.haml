@@ -52,7 +52,6 @@
               = a.label :zip_code, 'Zip code:', class: 'control-label col-lg-3'
               .col-lg-9
                 = a.text_field :zip_code, class: 'form-control'
-    .col-lg-6
       .well.bs-component
         %fieldset
           %h5 Booking settings
@@ -75,8 +74,23 @@
             = f.label :min_stay, 'Minimum stay (days):', class: 'control-label col-lg-4'
             .col-lg-3
               = f.number_field :min_stay, min: 0, step: 1, class: 'form-control'
-    .col-lg-6
       .well.bs-component
         %fieldset
           = f.button 'Save', class: 'btn btn-primary'
-          = f.button 'Delete', class: 'btn btn-danger'
+          = link_to 'Delete', @apartment, method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', role: 'button'
+    .col-lg-6
+      .well.bs-component
+        %fieldset
+          %h5 Image upload
+          %hr
+          - if @apartment.image_stored?
+            = image_tag @apartment.image.thumb('600x400#').url, class: 'img-responsive'
+            .form-group
+              .checkbox.col-lg-9
+                = f.label :remove_image do
+                  = f.check_box :remove_image
+                  Remove image
+          - else
+            .form-group
+              .col-lg-9
+                = f.file_field :image

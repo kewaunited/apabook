@@ -66,6 +66,8 @@ class ApartmentsController < ApplicationController
       :week_price,
       :min_stay,
       :active,
+      :image,
+      :remove_image,
       address_attributes: [
         :city,
         :street,

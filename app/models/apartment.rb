@@ -8,6 +8,10 @@ class Apartment < ActiveRecord::Base
 
   accepts_nested_attributes_for :address
 
+  extend Dragonfly::Model
+  extend Dragonfly::Model::Validations
+  dragonfly_accessor :image
+
   def formatted_guests
     max_guests != min_guests ? [min_guests, max_guests - min_guests].join(' + ') : max_guests
   end
