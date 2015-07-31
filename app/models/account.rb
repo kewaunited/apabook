@@ -14,7 +14,7 @@ class Account < ActiveRecord::Base
     [first_name, last_name].compact.join(' ')
   end
 
-  def has_apartments?
+  def apartments?
     apartments.present?
   end
 end

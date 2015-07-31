@@ -16,23 +16,17 @@ class ApartmentsController < ApplicationController
 
   def new
     @apartment = Apartment.new
-    @apartment.build_address
+    apartment.build_address
   end
 
   def create
     @apartment = current_user.apartments.new(apartment_params)
-    if apartment.save
-      redirect_to user_apartments_path
-    else
-      render :new
-    end
+    apartment.save ? redirect_to(user_apartments_path) : render(:new)
   end
 
   def edit
     @apartment = users_apartment
-    if @apartment
-      apartment.build_address if apartment.address.nil?
-    end
+    apartment.build_address if apartment && apartment.address.nil?
   end
 
   def update

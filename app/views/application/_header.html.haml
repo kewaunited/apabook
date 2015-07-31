@@ -13,7 +13,7 @@
           %li= link_to 'Apartments', apartments_path
         %ul.nav.navbar-nav.navbar-right.user
           - if current_user
-            - if current_user.has_apartments?
+            - if current_user.apartments?
               %li= link_to 'My apartments', user_apartments_path
             %li
               %p.navbar-text Hello #{current_user.first_name}!
