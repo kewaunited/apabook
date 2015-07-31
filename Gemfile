@@ -67,5 +67,8 @@ group :development do
   gem 'guard-bundler', require: false
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor', group: :production
+  gem 'rack-cache', require: 'rack/cache'
+end
 
