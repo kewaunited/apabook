@@ -17,5 +17,5 @@
               .col-lg-4
                 Guests: <strong>#{apartment.formatted_guests}</strong>
           .col-lg-3.text-right
-            %h2 #{apartment.day_price} PLN
+            %h2 #{number_to_currency(apartment.day_price, unit: 'PLN', separator: ",", delimiter: "", format: "%n %u")}
             %a.btn.btn-primary{ href: '#', role: 'button' } Book now
