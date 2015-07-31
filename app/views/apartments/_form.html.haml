@@ -77,7 +77,7 @@
       .well.bs-component
         %fieldset
           = f.button 'Save', class: 'btn btn-primary'
-          = link_to 'Delete', @apartment, method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', role: 'button'
+          = link_to 'Delete', @apartment, method: 'delete', 'data- confirm' => 'Are you sure?', class: 'btn btn-danger', role: 'button'
     .col-lg-6
       .well.bs-component
         %fieldset
