@@ -43,6 +43,8 @@ gem 'haml-rails', '~> 0.9.0'
 
 gem 'dragonfly', '~> 1.0.10'
 
+gem 'dragonfly-s3_data_store'
+
 group :development, :test do
   gem 'rb-readline', '~> 0.5.3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
