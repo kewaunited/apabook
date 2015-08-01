@@ -3,7 +3,7 @@
     .apartment.panel.panel-default
       .panel-body
         .row
-          - if apartment.image.image_stored?
+          - if apartment.image && apartment.image.image_stored?
             = image_tag apartment.image.image.thumb('201x134#').url, class: 'img-responsive col-lg-3 media-object'
           .col-lg-6
             %p.lead
