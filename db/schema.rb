@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731184119) do
+ActiveRecord::Schema.define(version: 20150801124034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,18 @@ ActiveRecord::Schema.define(version: 20150731184119) do
     t.boolean  "active"
     t.integer  "owner_id"
     t.integer  "min_stay"
-    t.string   "image_uid"
-    t.string   "image_name"
+    t.integer  "image_id"
   end
 
   add_index "apartments", ["address_id"], name: "index_apartments_on_address_id", using: :btree
+  add_index "apartments", ["image_id"], name: "index_apartments_on_image_id", using: :btree
   add_index "apartments", ["owner_id"], name: "index_apartments_on_owner_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

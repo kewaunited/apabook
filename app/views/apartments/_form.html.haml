@@ -83,14 +83,15 @@
         %fieldset
           %h5 Image upload
           %hr
-          - if @apartment.image_stored?
-            = image_tag @apartment.image.thumb('600x400#').url, class: 'img-responsive'
-            .form-group
-              .checkbox.col-lg-9
-                = f.label :remove_image do
-                  = f.check_box :remove_image
-                  Remove image
-          - else
-            .form-group
-              .col-lg-9
-                = f.file_field :image
+          = f.fields_for :image do |i|
+            - if @apartment.image && @apartment.image.image_stored?
+              = image_tag @apartment.image.image.thumb('600x400#').url, class: 'img-responsive'
+              .form-group
+                .checkbox.col-lg-9
+                  = i.label :remove_image do
+                    = i.check_box :remove_image
+                    Remove image
+            - else
+              .form-group
+                .col-lg-9
+                  = i.file_field :image

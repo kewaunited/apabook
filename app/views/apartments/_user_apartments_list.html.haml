@@ -5,8 +5,8 @@
         .apartment.panel.panel-default
           .panel-body
             .row
-              - if apartment.image_stored?
-                = image_tag apartment.image.thumb('201x134#').url, class: 'img-responsive col-lg-5 media-object'
+              - if apartment.image.image_stored?
+                = image_tag apartment.image.image.thumb('201x134#').url, class: 'img-responsive col-lg-5 media-object'
               .col-lg-7
                 %p.lead
                   Apartment <strong>#{apartment.name}</strong><br />

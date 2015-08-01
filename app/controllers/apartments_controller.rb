@@ -66,12 +66,14 @@ class ApartmentsController < ApplicationController
       :week_price,
       :min_stay,
       :active,
-      :image,
-      :remove_image,
       address_attributes: [
         :city,
         :street,
         :zip_code
+      ],
+      image_attributes: [
+        :image,
+        :remove_image
       ]
     )
   end
