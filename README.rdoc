@@ -1,5 +1,5 @@
 == APABOOK
 
-A simple Rails app for apartment rental management.
+A simple Rails web application for apartment rental management.
 
-[Heroku App](http://apabook.herokuapp.com/)
+Heroku App: http://apabook.herokuapp.com
