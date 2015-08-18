@@ -1,21 +1,24 @@
 .apartments.col-lg-9
   - @apartments.each do |apartment|
-    .apartment.panel.panel-default
+    .apartment.panel.panel-default.col-md-12.col-sm-6
       .panel-body
         .row
           - if apartment.image && apartment.image.image_stored?
-            = image_tag apartment.image.image.thumb('201x134#').url, class: 'img-responsive col-lg-3 media-object'
-          .col-lg-6
+            = image_tag apartment.image.image.thumb('603x402#').url, class: 'img-responsive col-sm-12 col-md-3 media-object'
+          .col-sm-12.col-md-6
             %p.lead
               <strong>#{apartment.name}</strong> Apartment<br />
               <small>#{apartment.address.street}, #{apartment.address.city}</small>
             .row
-              .col-lg-4
+              .col-sm-4
                 Bedrooms: <strong>#{apartment.bedroom_count}</strong>
-              .col-lg-4
+              .col-sm-4
                 Bathrooms: <strong>#{apartment.bathroom_count}</strong>
-              .col-lg-4
+              .col-sm-4
                 Guests: <strong>#{apartment.formatted_guests}</strong>
-          .col-lg-3.text-right
-            %h2= number_to_currency(apartment.day_price, unit: 'PLN', separator: ',', delimiter: '', format: '%n %u')
-            %a.btn.btn-primary{ href: '#', role: 'button' } Book now
+          .col-sm-12.col-md-3.text-right
+            .row
+              .col-sm-12.col-md-12
+                %h2= number_to_currency(apartment.day_price, unit: 'PLN', separator: ',', delimiter: '', format: '%n %u')
+              .col-sm-12.col-md-12
+                %a.btn.btn-primary{ href: '#', role: 'button' } Book now
