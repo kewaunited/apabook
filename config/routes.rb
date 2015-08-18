@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'apartments#index'
+
   resources :apartments
 
   resources :apartments, only: [:index]
@@ -13,6 +15,4 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: :logout
   get 'register', to: 'accounts#new', as: :register
   post 'register', to: 'accounts#create', as: :accounts
-
-  root 'apartments#index'
 end
