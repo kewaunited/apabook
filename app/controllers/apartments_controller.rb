@@ -3,7 +3,11 @@ class ApartmentsController < ApplicationController
   before_action :authorize_user, except: [:index, :show]
 
   def index
-    @apartments = Apartment.active
+    if params
+      @apartments = Apartment.search(params)
+    else
+      @apartments = Apartment.active
+    end
   end
 
   def user_index
@@ -38,10 +42,31 @@ class ApartmentsController < ApplicationController
     redirect_to user_apartments_path, danger: 'Apartment has been removed.'
   end
 
+  helper_method :present_cities
+  helper_method :present_bedroom_counts
+  helper_method :present_bathroom_counts
+  helper_method :present_guest_counts
+
   private
 
   def apartment
     @apartment ||= Apartment.find(params[:id])
+  end
+
+  def present_cities
+    Address.pluck(:city).uniq
+  end
+
+  def present_bedroom_counts
+    Apartment.active.pluck(:bedroom_count).uniq
+  end
+
+  def present_bathroom_counts
+    Apartment.active.pluck(:bathroom_count).uniq
+  end
+
+  def present_guest_counts
+    (1..Apartment.maximum('max_guests')).to_a
   end
 
   def user_apartment

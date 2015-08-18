@@ -3,4 +3,31 @@
     .panel-heading
       Search apartments
     .panel-body
-      Panel content
+      .search-apartments
+        = form_tag apartments_path, method: :get do
+          %fieldset
+            .form-group.row
+              .col-lg-12
+                = label :city, 'City:'
+                = select_tag :city, options_for_select(present_cities, selected: params[:city]), include_blank: 'Any', class: 'form-control'
+            .form-group.row
+              .col-lg-6
+                = label :bedrooms, 'Bedrooms:'
+                = select_tag :bedrooms, options_for_select(present_bedroom_counts, selected: params[:bedrooms]), include_blank: 'Any', class: 'form-control'
+              .col-lg-6
+                = label :bathrooms, 'Bathrooms:'
+                = select_tag :bathrooms, options_for_select(present_bathroom_counts, selected: params[:bathrooms]), include_blank: 'Any', class: 'form-control'
+            .form-group.row
+              .col-lg-6
+                = label :day_price_from, 'Day price from:'
+                = text_field_tag :day_price_from, params[:day_price_from], class: 'form-control'
+              .col-lg-6
+                = label :day_price_to, 'to:'
+                = text_field_tag :day_price_to, params[:day_price_to], class: 'form-control'
+            .form-group.row
+              .col-lg-6
+                = label :guests, 'Guests:'
+                = select_tag :guests, options_for_select(present_guest_counts, selected: params[:guests]), include_blank: 'Any', class: 'form-control'
+            .form-group.row
+              .col-lg-12
+                = submit_tag 'Search', class: 'btn btn-primary'
